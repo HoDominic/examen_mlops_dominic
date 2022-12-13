@@ -10,6 +10,13 @@ from schemas.Course import Course
 from retry import retry
 
 
+#router
+from routers import (
+    course_router as course # Just to make an alias, because it looks nicer.
+    
+)
+
+
 app = FastAPI()
 
 app.add_middleware(
@@ -40,6 +47,9 @@ def read_in_all_courses(limit: int = -1) -> List[Course]:
 
 all_courses = read_in_all_courses(-1)
 
+
+
+
 @app.get("/")
 async def root():
     return {"message": "I am working correctly!"}
@@ -51,3 +61,6 @@ async def docker_test():
 @app.get('/mct/courses')
 async def get_all_courses():
     return all_courses
+
+
+app.include_router(course.router)
