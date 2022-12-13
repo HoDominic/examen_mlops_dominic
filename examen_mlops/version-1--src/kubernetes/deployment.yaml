@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: examen-deployment
+  namespace: exam-nathansegers
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: examen-deployment
+  template:
+    metadata:
+      labels:
+        app: examen-deployment
+    spec:
+      containers:
+      - name: examen-deployment
+        image: ghcr.io/hodominic/dominicho/mlops-exam-1-backend
+        ports:
+        - containerPort: 80
+
+
