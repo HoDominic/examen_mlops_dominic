@@ -19,5 +19,8 @@ spec:
         image: ghcr.io/hodominic/dominicho/mlops-exam-1-backend
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: regcredexamen
+    
 
 
