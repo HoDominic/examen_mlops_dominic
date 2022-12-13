@@ -3,4 +3,5 @@ services:
     image: version-1
     build:
       context: .
-      dockerfile: exam-1-dockerfile
+      dockerfile: Dockerfile
+
