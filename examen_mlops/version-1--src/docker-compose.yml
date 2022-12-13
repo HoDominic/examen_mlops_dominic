@@ -4,5 +4,9 @@ services:
     build:
       context: .
       dockerfile: exam-1-dockerfile
+    ports:
+      - "8080:8080"
+
+
    
 
